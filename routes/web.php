@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Gallery.index');
-});
+Route::get('/','App\Http\Controllers\PhotosController@index');
+Route::post('/add','App\Http\Controllers\PhotosController@store')->name('add');
+Route::delete('/delete/{photo}','App\Http\Controllers\PhotosController@delete')->name('delete');
